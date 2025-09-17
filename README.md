@@ -1,131 +1,120 @@
-<!-- TODO: CHANGE ALL INSTANCES OF "course-on-collaboratory-software-development" IN ENTIRE PROJECT TO YOUR PROJECT TITLE-->
+# Course on collaboratory software development
 
-# course-on-collaboratory-software-development
+This is a quick course on some fundamentals in working together on a coding project
 
-<div align="center">
+Accompanying presentation can be found here [Google Docs](https://docs.google.com/presentation/d/1eP0Suryhu-Fw2E44i8wFQtQ7nGVxYQG9aNoj4_GEGYA/edit?usp=sharing)
 
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CogitoNTNU/course-on-collaboratory-software-development/ci.yml)
-![GitHub top language](https://img.shields.io/github/languages/top/CogitoNTNU/course-on-collaboratory-software-development)
-![GitHub language count](https://img.shields.io/github/languages/count/CogitoNTNU/course-on-collaboratory-software-development)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Project Version](https://img.shields.io/badge/version-0.0.1-blue)](https://img.shields.io/badge/version-0.0.1-blue)
+## Part 1: Git
 
-<img src="docs/images/project-logo.webp" width="50%" alt="Cogito Project Logo" style="display: block; margin-left: auto; margin-right: auto;">
-</div>
+### Task 0: Initial Setup
 
-<details> 
-<summary><b>📋 Table of contents </b></summary>
+For this workshop, you will need to have Git, UV and Python installed on your machine and have a GitHub account.
 
-- [course-on-collaboratory-software-development](#course-on-collaboratory-software-development)
-  - [Description](#description)
-  - [🛠️ Prerequisites](#%EF%B8%8F-prerequisites)
-  - [Getting started](#getting-started)
-  - [Usage](#usage)
-    - [📖 Generate Documentation Site](#-generate-documentation-site)
-  - [Testing](#testing)
-  - [Team](#team)
-    - [License](#license)
+- Create a github account [Github](https://github.com/) if you don't have one already
+- Also save this for later [GitHub Student Developer Pack](https://education.github.com/pack) for some free goodies for the rest of your time studying.
 
-</details>
+If you don't have git installed, follow the instructions below to install it.
 
-## Description
+- Install git on your machine
+  - [Windows](https://git-scm.com/download/win)
 
-<!-- TODO: Provide a brief overview of what this project does and its key features. Please add pictures or videos of the application -->
+    - Press `Win + R` then write `cmd`
 
-## 🛠️ Prerequisites
-
-<!-- TODO: In this section you put what is needed for the program to run.
-For example: OS version, programs, libraries, etc.  
-
--->
-
-- **Git**: Ensure that git is installed on your machine. [Download Git](https://git-scm.com/downloads)
-- **Python 3.12**: Required for the project. [Download Python](https://www.python.org/downloads/)
-- **UV**: Used for managing Python environments. [Install UV](https://docs.astral.sh/uv/getting-started/installation/)
-- **Docker** (optional): For DevContainer development. [Download Docker](https://www.docker.com/products/docker-desktop)
-
-## Getting started
-
-<!-- TODO: In this Section you describe how to install this project in its intended environment.(i.e. how to get it to run)  
--->
-
-1. **Clone the repository**:
-
-   ```sh
-   git clone https://github.com/CogitoNTNU/course-on-collaboratory-software-development.git
-   cd course-on-collaboratory-software-development
-   ```
-
-1. **Install dependencies**:
-
-   ```sh
-   uv sync
-   ```
-
-<!--
-1. **Configure environment variables**:
-    This project uses environment variables for configuration. Copy the example environment file to create your own:
-    ```sh
-    cp .env.example .env
+    ```cmd
+      winget install --id Git.Git -e --source winget
     ```
-    Then edit the `.env` file to include your specific configuration settings.
--->
 
-1. **Set up pre commit** (only for development):
-   ```sh
-   uv run pre-commit install
-   ```
+    Or download installer from [The official Github page](https://github.com/git-for-windows/git/releases/download/v2.51.0.windows.1/Git-2.51.0-64-bit.exe)
 
-## Usage
+  - [Mac](https://git-scm.com/download/mac)
 
-To run the project, run the following command from the root directory of the project:
+    - Make sure to have brew installed if you don't have it follow [this](https://brew.sh/)
 
-```bash
+    ```bash
+    brew install git
+    ```
 
-```
+  - [Linux](https://git-scm.com/download/linux)
 
-<!-- TODO: Instructions on how to run the project and use its features. -->
+    - You probalby allready have Git preinstalled lmao enjoy
+    - If you somehow don't gave git see [here](https://git-scm.com/download/linux) for instructions for your distro
 
-### 📖 Generate Documentation Site
-
-To build and preview the documentation site locally:
+To validate that git is installed, open a terminal/cmd and write
 
 ```bash
-uv run mkdocs build
-uv run mkdocs serve
+git --version
 ```
 
-This will build the documentation and start a local server at [http://127.0.0.1:8000/](http://127.0.0.1:8000/) where you can browse the docs and API reference. Get the documentation according to the lastes commit on main by viewing the `gh-pages` branch on GitHub: [https://cogitontnu.github.io/course-on-collaboratory-software-development/](https://cogitontnu.github.io/course-on-collaboratory-software-development/).
+- Initial configuration of git:
 
-## Testing
+  - Set your name and the email you used On Github
 
-To run the test suite, run the following command from the root directory of the project:
+  ```bash
+  git config --global user.name "Your Name"
+  git config --global user.email "your.email@example.com"
+  ```
+
+  - Additionally you can set a default merge policy globally (this is normally asked on a per repo basis). We recommend the following option:
+
+  ```bash
+  git config --global pull.rebase false
+  ```
+
+If you get a version number, you are good to go.
+
+- Install UV package manager follow the directions at the [official docs](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1)
+
+- Lastly if you don't have Python installed you can easily do so with the following command:
 
 ```bash
-uv run pytest --doctest-modules --cov=src --cov-report=html
+uv python install
 ```
 
-## Team
+### Task 1: Fork and clone the repo
 
-This project would not have been possible without the hard work and dedication of all of the contributors. Thank you for the time and effort you have put into making this project a reality.
+Forking the repository will save a copy to your own Github page, where you can do as you please with it. Since we will be making some changes as part of the tasks this is required.
 
-<table align="center">
-    <tr>
-        <!--
-        <td align="center">
-            <a href="https://github.com/NAME_OF_MEMBER">
-              <img src="https://github.com/NAME_OF_MEMBER.png?size=100" width="100px;" alt="NAME OF MEMBER"/><br />
-              <sub><b>NAME OF MEMBER</b></sub>
-            </a>
-        </td>
-        -->
-    </tr>
-</table>
+- Go to the [fork page](https://github.com/CogitoNTNU/course-on-collaboratory-software-development/fork) for the repo or click on the fork button in the top right on the \<>Code tab of the project.
 
-![Group picture](docs/img/team.png)
+- Clone the repository in the directory of your choosing (open a terminal/cmd in that directory) and clone **your** recently forked repository. Change fill in your own username in the url bellow
 
-### License
+```bash
+git clone https://github.com/[YOUR GITHUB USERNAME]/course-on-collaboratory-software-development.git
+cd course-on-collaboratory-software-development
+```
 
-______________________________________________________________________
+then change to the directory `git-course`
 
-Distributed under the MIT License. See `LICENSE` for more information.
+### Task 2: Making a change
+
+This course is accompanied by a simple calculator program. The program is not complete and your task is to implement the missing functionality. You will find the code in `src/calculator.py`
+
+1. In a terminal/cmd in the project's root directory install and activate the development environment
+
+```bash
+uv sync
+```
+
+2. Set up the pre-commit
+
+```bash
+uv run pre-commit install
+```
+
+3. Open the project in your favorite editor and implement the missing functionality in `src/calculator.py`. The missing functionality is marked with a `# TODO` comment (3 in total).
+
+To try out your changes, run the program with
+
+```bash
+uv run python src/calculator.py
+```
+
+4. When you are done, stage, commit and push your changes
+
+```bash
+git add src/calculator.py
+git commit -m "Your commit message"
+git push
+```
+
+### Task 3: Collaborating with others
