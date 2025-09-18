@@ -4,9 +4,7 @@ This is a quick course on some fundamentals in working together on a coding proj
 
 Accompanying presentation can be found here [Google Docs](https://docs.google.com/presentation/d/1eP0Suryhu-Fw2E44i8wFQtQ7nGVxYQG9aNoj4_GEGYA/edit?usp=sharing)
 
-## Part 1: Git
-
-### Task 0: Initial Setup
+## Task 0: Initial Setup
 
 For this workshop, you will need to have Git, UV and Python installed on your machine and have a GitHub account.
 
@@ -70,7 +68,7 @@ If you get a version number, you are good to go.
 uv python install
 ```
 
-### Task 1: Fork and clone the repo
+## Task 1: Fork and clone the repo
 
 Forking the repository will save a copy to your own Github page, where you can do as you please with it. Since we will be making some changes as part of the tasks this is required.
 
@@ -83,7 +81,7 @@ git clone https://github.com/[YOUR GITHUB USERNAME]/course-on-collaboratory-soft
 cd course-on-collaboratory-software-development
 ```
 
-### Task 2: Making a change
+## Task 2: Making a change
 
 This course is accompanied by a simple calculator program. The program is not complete and your task is to implement the missing functionality. You will find the code in `src/calculator.py`
 
