@@ -155,3 +155,6 @@ uv add numpy
 ## Task 5: Task 5: Change workflow
 
 This task involves GitHub actions.
+
+- You will find the workflow file in `.github/workflows/ci.yml`. The workflow is a simple CI pipeline that shall runs tests and lints the code.
+- Change the last step in the `build-and-test` job to actually run the tests with `uv run pytest` instead of just echoing a TODO message.
