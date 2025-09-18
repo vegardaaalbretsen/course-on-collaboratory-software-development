@@ -138,3 +138,20 @@ git add .
 git commit -m "Your commit message"
 git push
 ```
+
+## Task 4: Add a new dependency
+
+Your team needs a new dependency, let's say `numpy` for some reason. You need to add this dependency to the project.
+
+- Add the dependency with uv
+
+```bash
+uv add numpy
+```
+
+- Check out the changes to the `pyproject.toml` and `uv.lock` files.
+- Stage, commit and push the changes
+
+## Task 5: Task 5: Change workflow
+
+This task involves GitHub actions.
