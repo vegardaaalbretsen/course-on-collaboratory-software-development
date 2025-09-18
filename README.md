@@ -104,7 +104,7 @@ uv run pre-commit install
 To try out your changes, run the program with
 
 ```bash
-uv run python src/calculator.py
+uv run python main.py
 ```
 
 4. When you are done, stage, commit and push your changes
