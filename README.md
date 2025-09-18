@@ -4,9 +4,7 @@ This is a quick course on some fundamentals in working together on a coding proj
 
 Accompanying presentation can be found here [Google Docs](https://docs.google.com/presentation/d/1eP0Suryhu-Fw2E44i8wFQtQ7nGVxYQG9aNoj4_GEGYA/edit?usp=sharing)
 
-## Part 1: Git
-
-### Task 0: Initial Setup
+## Task 0: Initial Setup
 
 For this workshop, you will need to have Git, UV and Python installed on your machine and have a GitHub account.
 
@@ -70,7 +68,7 @@ If you get a version number, you are good to go.
 uv python install
 ```
 
-### Task 1: Fork and clone the repo
+## Task 1: Fork and clone the repo
 
 Forking the repository will save a copy to your own Github page, where you can do as you please with it. Since we will be making some changes as part of the tasks this is required.
 
@@ -83,9 +81,7 @@ git clone https://github.com/[YOUR GITHUB USERNAME]/course-on-collaboratory-soft
 cd course-on-collaboratory-software-development
 ```
 
-then change to the directory `git-course`
-
-### Task 2: Making a change
+## Task 2: Making a change
 
 This course is accompanied by a simple calculator program. The program is not complete and your task is to implement the missing functionality. You will find the code in `src/calculator.py`
 
@@ -106,7 +102,7 @@ uv run pre-commit install
 To try out your changes, run the program with
 
 ```bash
-uv run python src/calculator.py
+uv run python main.py
 ```
 
 4. When you are done, stage, commit and push your changes
@@ -117,4 +113,50 @@ git commit -m "Your commit message"
 git push
 ```
 
-### Task 3: Collaborating with others
+## Task 3: Collaborating with others
+
+Now that you have implemented division, your simulated team mates has done their work in a separate branch `add-multiplication`. You are now tasked with integrating their changes with your's.
+
+- Use the following commands to list and switch to their branch to check out the work:
+
+```bash
+git fetch --all 
+git switch add-multiplication
+```
+
+You will now have to either review the pull request in Github or just merge the changes to main locally before pushing. You might find that you have a conflict you need to resolve...
+
+```bash
+git switch main
+git merge add-multiplication
+```
+
+When resolving a conflict you decide what to keep, what to discard and how the files end up. Once you are happy with the outcome finish the merge by staging, commiting and pushing your changes.
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push
+```
+
+## Task 4: Add a new dependency
+
+Your team needs a new dependency, let's say `numpy` for some reason. You need to add this dependency to the project.
+
+- Add the dependency with uv
+
+```bash
+uv add numpy
+```
+
+- Check out the changes to the `pyproject.toml` and `uv.lock` files.
+- Stage, commit and push the changes
+
+## Task 5: Task 5: Change workflow
+
+This task involves GitHub actions.
+
+- You will find the workflow file in `.github/workflows/ci.yml`. The workflow is a simple CI pipeline that shall runs tests and lints the code.
+- Change the last step in the `build-and-test` job to actually run the tests with `uv run pytest` instead of just echoing a TODO message.
+- Commit and push your changes.
+- Go to the Actions tab in your repository on GitHub and check that the workflow runs and passes. You can find it at `https://github.com/[YOUR GITHUB USERNAME]/course-on-collaboratory-software-development/actions`
