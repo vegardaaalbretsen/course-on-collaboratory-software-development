@@ -158,3 +158,5 @@ This task involves GitHub actions.
 
 - You will find the workflow file in `.github/workflows/ci.yml`. The workflow is a simple CI pipeline that shall runs tests and lints the code.
 - Change the last step in the `build-and-test` job to actually run the tests with `uv run pytest` instead of just echoing a TODO message.
+- Commit and push your changes.
+- Go to the Actions tab in your repository on GitHub and check that the workflow runs and passes. You can find it at `https://github.com/[YOUR GITHUB USERNAME]/course-on-collaboratory-software-development/actions`
