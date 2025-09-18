@@ -44,11 +44,6 @@ def subtract(a, b):
     return format_result(result)
 
 
-def divide(a, b):
-    # TODO: Implement the division function here
-    pass
-
-
 def main():
     """
     Simple interactive calculator for testing.
@@ -63,7 +58,6 @@ def main():
         if operation == "quit":
             print("Goodbye!")
             break
-        # TODO: Add handling for divide operation here
         if operation not in ["add", "subtract"]:
             print("Invalid operation. Please use 'add' or 'subtract'")
             continue
@@ -78,7 +72,6 @@ def main():
             elif operation == "subtract":
                 result = subtract(a, b)
                 print(f"Result: {a} - {b} = {result}")
-            # TODO: Add handling for divide operation here
 
         except ValueError:
             print("Please enter valid numbers")
