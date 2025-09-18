@@ -110,7 +110,6 @@ repos:
         additional_dependencies: ["validate-pyproject-schema-store[all]"]
 
   # ----------------------------- ⚡️ uv Build Tools ---------------------------- #
-  # This helps ensure cross-compatibility with people who don't wish to use uv
   - repo: https://github.com/astral-sh/uv-pre-commit
     # uv version.
     rev: 0.5.27
@@ -121,9 +120,6 @@ repos:
       # Update the uv lockfile
       - id: uv-lock
         name: "⚡️ uv · Update dependency lockfile"
-      # Export to txt
-      - id: uv-export
-        name: "⚡️ uv · Export dependencies to requirements.txt"
 
 
   # ---------------------------------------------------------------------------- #
