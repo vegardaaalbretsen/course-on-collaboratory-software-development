@@ -83,8 +83,6 @@ git clone https://github.com/[YOUR GITHUB USERNAME]/course-on-collaboratory-soft
 cd course-on-collaboratory-software-development
 ```
 
-then change to the directory `git-course`
-
 ### Task 2: Making a change
 
 This course is accompanied by a simple calculator program. The program is not complete and your task is to implement the missing functionality. You will find the code in `src/calculator.py`
@@ -117,4 +115,28 @@ git commit -m "Your commit message"
 git push
 ```
 
-### Task 3: Collaborating with others
+## Task 3: Collaborating with others
+
+Now that you have implemented division, your simulated team mates has done their work in a separate branch ```add-multiplication```. You are now tasked with integrating their changes with your's.
+
+- Use the following commands to list and switch to their branch to check out the work:
+
+```bash
+git fetch --all 
+git switch add-multiplication
+```
+
+You will now have to either review the pull request in Github or just merge the changes to main locally before pushing. You might find that you have a conflict you need to resolve...
+
+```bash
+git switch main
+git merge add-multiplication
+```
+
+When resolving a conflict you decide what to keep, what to discard and how the files end up. Once you are happy with the outcome finish the merge by staging, commiting and pushing your changes.
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push
+```
