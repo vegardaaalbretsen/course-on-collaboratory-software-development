@@ -5,6 +5,7 @@ This module provides basic arithmetic operations.
 
 from utils import validate_numbers, format_result
 
+
 def add(a, b):
     """
     Add two numbers together.
@@ -42,9 +43,11 @@ def subtract(a, b):
     result = a - b
     return format_result(result)
 
+
 def divide(a, b):
     # TODO: Implement the division function here
     pass
+
 
 def main():
     """

@@ -115,7 +115,7 @@ git push
 
 ## Task 3: Collaborating with others
 
-Now that you have implemented division, your simulated team mates has done their work in a separate branch ```add-multiplication```. You are now tasked with integrating their changes with your's.
+Now that you have implemented division, your simulated team mates has done their work in a separate branch `add-multiplication`. You are now tasked with integrating their changes with your's.
 
 - Use the following commands to list and switch to their branch to check out the work:
 
