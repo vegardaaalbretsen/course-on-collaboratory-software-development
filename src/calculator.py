@@ -6,7 +6,6 @@ This module provides basic arithmetic operations.
 from src.utils import validate_numbers, format_result
 
 
-
 def add(a, b):
     """
     Add two numbers together.
