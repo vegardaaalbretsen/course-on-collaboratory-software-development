@@ -3,7 +3,8 @@ Simple Calculator Module
 This module provides basic arithmetic operations.
 """
 
-from utils import validate_numbers, format_result
+from src.utils import validate_numbers, format_result
+
 
 
 def add(a, b):
@@ -83,7 +84,3 @@ def main():
             print("Please enter valid numbers")
         except TypeError as e:
             print(f"Error: {e}")
-
-
-if __name__ == "__main__":
-    main()
